@@ -16,7 +16,7 @@ public class RemoveMovieCommandHandler
     {
         _context = context;
     }
-    public async void Handle(RemoveMovieCommand command)
+    public async Task Handle(RemoveMovieCommand command)
     {
         var movie = await _context.Movies.FindAsync(command.MovieId);
         _context.Movies.Remove(movie);

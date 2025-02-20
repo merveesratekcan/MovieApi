@@ -16,7 +16,7 @@ public class UpdateCategoryCommandHandler
     {
         _context = context;
     }
-    public async void Handle(UpdateCategoryCommand command)
+    public async Task Handle(UpdateCategoryCommand command)
     {
         var category = await _context.Categories.FindAsync(command.CategoryId);
         category.CategoryName = command.CategoryName;
