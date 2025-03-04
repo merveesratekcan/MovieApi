@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace MovieApi.Application.Features.CQRSDesingPattern.Handlers.MovieHandlers;
 
-public class GetMovieBuIdQueryHandler
+public class GetMovieByIdQueryHandler
 {
     private readonly MovieContext context;
 
-    public GetMovieBuIdQueryHandler(MovieContext context)
+    public GetMovieByIdQueryHandler(MovieContext context)
     {
         this.context = context;
     }
@@ -22,6 +22,7 @@ public class GetMovieBuIdQueryHandler
         var movie = await context.Movies.FindAsync(query.MovieId);
         return new GetMovieByIdQueryResult
         {
+            MovieId = movie.MovieId,
             Title = movie.Title,
             CoverImageUrl = movie.CoverImageUrl,
             Rating = movie.Rating,

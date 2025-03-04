@@ -16,7 +16,7 @@ public class RemoveCategoryCommandHandler
     {
         _context = context;
     }
-    public async Task Handle(RemoveMovieCommand command)
+    public async Task Handle(RemoveCategoryCommand command)
     {
         var category = await _context.Categories.FindAsync(command.CategoryId);
         _context.Categories.Remove(category);

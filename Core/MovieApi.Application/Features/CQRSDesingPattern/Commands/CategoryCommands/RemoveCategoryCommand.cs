@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace MovieApi.Application.Features.CQRSDesingPattern.Commands.CategoryCommands;
 
-public class RemoveMovieCommand
+public class RemoveCategoryCommand
 {
+    public RemoveCategoryCommand(int categoryId)
+    {
+        CategoryId = categoryId;
+    }
+
     public int CategoryId { get; set; }
     public string CategoryName { get; set; }
 }
