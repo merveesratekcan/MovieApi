@@ -10,4 +10,5 @@ namespace MovieApi.Application.Features.MediatorDesingPattern.Queries.CastQuerie
 
 public class GetCastQuery : IRequest<List<GetCastQueryResult>>
 {
+
 }
