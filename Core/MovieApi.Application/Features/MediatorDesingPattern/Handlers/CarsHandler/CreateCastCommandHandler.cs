@@ -25,7 +25,7 @@ public class CreateCastCommandHandler : IRequestHandler<CreateCastCommand>
         //Örneğin, bir işlemi başlattınız ve bu işlem birkaç saniye sürdü. Bu işlemi iptal etmek isterseniz, CancellationToken nesnesini kullanabilirsiniz.
         //Bu nesne, işlemi iptal etmek için kullanılır. Bu nesne, CancellationTokenSource nesnesi ile birlikte kullanılır.
 
-        _context.Casts.Add(new Cast
+         await _context.Casts.AddAsync(new Cast
          {
              Biography = request.Biography,
              ImageUrl = request.ImageUrl,
