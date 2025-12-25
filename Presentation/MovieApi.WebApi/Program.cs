@@ -1,10 +1,13 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MovieApi.Application.Features.CQRSDesingPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.CQRSDesingPattern.Handlers.MovieHandlers;
+using MovieApi.Application.Features.CQRSDesingPattern.Handlers.UserRegisterHandlers;
 using MovieApi.Application.Features.MediatorDesingPattern.Handlers.TagHandlers;
 using MovieApi.Application.Features.MediatorDesingPattern.Results.CastResults;
 using MovieApi.Persistence.Context;
+using MovieApi.Persistence.Identity;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +27,10 @@ builder.Services.AddScoped<GetMovieByIdQueryHandler>();
 builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<UpdateMovieCommandHandler>();
 builder.Services.AddScoped<RemoveMovieCommandHandler>();
+
+builder.Services.AddScoped<CreateUserRegisterCommadHandler>();
+builder.Services.AddIdentity<AppUser,IdentityRole>()
+    .AddEntityFrameworkStores<MovieContext>();
 
 
 builder.Services.AddMediatR(cfg =>

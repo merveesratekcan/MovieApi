@@ -1,0 +1,6 @@
+﻿<Project>
+  <PropertyGroup>
+    <RestoreAdditionalProjectFallbackFolders></RestoreAdditionalProjectFallbackFolders>
+    <RestoreAdditionalProjectFallbackFoldersExcludes></RestoreAdditionalProjectFallbackFoldersExcludes>
+  </PropertyGroup>
+</Project>
