@@ -1,0 +1,62 @@
+﻿@
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="mb-0">Create Category</h5>
+            <form class="ms-auto position-relative">
+                <div class="position-absolute top-50 translate-middle-y search-icon px-3"><ion-icon name="search-sharp"></ion-icon></div>
+                <input class="form-control ps-5" type="text" placeholder="search">
+            </form>
+        </div>
+        <div class="table-responsive mt-3">
+            <table class="table align-middle">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th> Category Name</th>
+                        <th>Movie Count</th>
+                        <th>Review Count</th>
+                        <th>Rating</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                        <th>Detail</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        
+                        <tr>
+                            <td>@item.CategoryName</td>
+                            <td>@item.MovieCount</td>
+                            <td>@item.ReviewCount</td>
+                            <td>@item.AvgRating</td>
+
+                            <td><a href="#" class="btn btn-danger">Delete</a></td>
+                            <td><a href="#" class="btn btn-success">Update</a></td>
+                            <td><a href="#" class="btn btn-warning">Detail</a></td>
+                            <td>
+                                <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                    <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
+                                    <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                    }
+
+                </tbody>
+            </table>
+            <td><a href="#" class="btn btn-primary">Add New Category </a></td>
+        </div>
+    </div>
+</div>
+
