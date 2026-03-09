@@ -50,4 +50,16 @@ public class AdminCategoryController : Controller
         return View(AdminCreateCategoryDto);
 
     }
+    public async Task<IActionResult> DeleteCategory(int id)
+    {
+        var client = _httpClientFactory.CreateClient();
+        var responseMessage = await client.DeleteAsync($"https://localhost:7288/api/Categories?id={id}");
+        if (responseMessage.IsSuccessStatusCode)
+        {
+            return RedirectToAction("CategoryList", "AdminCategory", new { area = "Admin" });
+        }
+        return View();
+
+    }
+
 }
